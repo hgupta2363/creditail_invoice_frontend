@@ -35,21 +35,27 @@ export default function PaymentSuccessFull({ route }) {
     <View
       style={[styles.container, { width: screenWidth, height: screenHeight }]}
     >
+      {/* SUCCESSFULL TICK */}
       <View>
         <Image
           source={require('../../assets/green_tick.gif')}
           style={styles.tick_image}
         />
       </View>
+      {/* BILL NO */}
       <View>
         <Text style={styles.bill_no}>{route?.params?.billNo}</Text>
       </View>
+      {/* PAYMENT AMOUNT */}
       <Text style={styles.amount}>
         {' '}
         {`\u20B9 ${route?.params?.payAmount ?? ''} `}
       </Text>
+      {/* RETAILER NAME */}
       <Text style={styles.retailer_name}>{route?.params?.retailerName}</Text>
       <View style={styles.dashed_line}></View>
+
+      {/* PAYMENT MODE */}
       <Text style={styles.payment_mode}>
         {' '}
         {`Paid By ${route?.params?.selectedPaymentMode}`}

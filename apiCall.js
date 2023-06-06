@@ -9,8 +9,7 @@ export const fetchInvoiceData = async () => {
   return res.data;
 };
 export const processInvoicePayment = async (reqParam) => {
-  console.log(reqParam, 'reqParam');
   const res = await axoisInstance.post('/invoicePaymnet', reqParam);
-  console.log(res, 'reqParam');
+
   return res;
 };

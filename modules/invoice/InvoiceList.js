@@ -11,6 +11,9 @@ import {
 import React, { Component, useState, useEffect } from 'react';
 import { fetchInvoiceData } from '../../apiCall';
 const screenWidth = Dimensions.get('window').width;
+
+/* SINGLE INVOICE TILE*/
+
 const InvoiceTile = ({ invoiceData, navigation }) => (
   <TouchableOpacity
     onPress={() =>
@@ -42,16 +45,14 @@ const InvoiceTile = ({ invoiceData, navigation }) => (
   </TouchableOpacity>
 );
 const InvoiceList = ({ navigation }) => {
-  console.log('invoice');
-
   const [loading, setLoading] = useState(false);
   const [invoiceListData, setInvoiceListData] = useState([]);
-  const [isRefreshing, setIsRefreshing] = useState(false);
+
   const fetchInvoices = async () => {
     setLoading(true);
     try {
       const invoiceListData = await fetchInvoiceData();
-      console.log(invoiceListData);
+
       setInvoiceListData(invoiceListData);
     } catch (err) {
       console.log(err);
@@ -65,6 +66,7 @@ const InvoiceList = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      {/* APP HEADER */}
       <View style={styles.header}>
         <Image
           style={styles.back_icon}
@@ -73,6 +75,7 @@ const InvoiceList = ({ navigation }) => {
         <Text style={styles.header_text}>Invoices </Text>
       </View>
 
+      {/* INVOICE LIST*/}
       <FlatList
         data={invoiceListData}
         keyExtractor={(item) => item?._id}
@@ -90,6 +93,8 @@ const InvoiceList = ({ navigation }) => {
     </View>
   );
 };
+
+/* STYLES */
 export default InvoiceList;
 const styles = StyleSheet.create({
   container: {

@@ -19,8 +19,7 @@ export default function InvoiceDetails({ route, navigation }) {
   const [isValidAmount, setIsValidAmount] = useState(true);
   const billNo = route?.params?.billNo;
   const retailerName = route?.params?.retailerName;
-  console.log(typeof payAmount);
-  console.log(isValidAmount);
+
   const makePayment = async () => {
     setProcessing(true);
     try {
@@ -48,7 +47,8 @@ export default function InvoiceDetails({ route, navigation }) {
 
   return (
     <View style={{ flex: 1 }}>
-      <View style={styles.header} onTap={() => console.log('taped')}>
+      {/* SCREEN HEADER */}
+      <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.pop()}>
           <Image
             style={styles.back_icon}
@@ -61,6 +61,7 @@ export default function InvoiceDetails({ route, navigation }) {
         </View>
       </View>
 
+      {/* AMOUNT INPUT BOX*/}
       <View style={styles.price_input_wrapper}>
         <Text style={styles.amount}>Amount</Text>
         <View style={styles.price_input}>
@@ -91,6 +92,8 @@ export default function InvoiceDetails({ route, navigation }) {
           <Text style={styles.amount}>please enter a valid amount</Text>
         ) : null}
       </View>
+
+      {/* CHOOSE PAYMENT MODE */}
       <View style={{ marginTop: 113, display: 'flex', alignItems: 'center' }}>
         <Text style={styles.payment_mode_type}>Choose Payment Mode</Text>
       </View>
@@ -119,6 +122,8 @@ export default function InvoiceDetails({ route, navigation }) {
           }}
         />
       </View>
+
+      {/* CONFIRM BUTTON */}
       <TouchableOpacity
         style={[
           styles.confirm_button,
@@ -145,6 +150,8 @@ export default function InvoiceDetails({ route, navigation }) {
     </View>
   );
 }
+
+/* STYLES */
 
 const styles = StyleSheet.create({
   header: {
