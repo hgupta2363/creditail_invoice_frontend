@@ -1,4 +1,4 @@
-<h1 align="center">Schmooze Assign</h1>
+<h1 align="center">Creditail Assignment</h1>
 
 
 ## Technology Stack
@@ -14,7 +14,7 @@
 
 ## Mongodb Schema
 
-* Invoice Schema:  storing invoice data
+* Invoice Schema:  storing invoice data Indexes: create indexes for key Retailer Id,Invoice Date
 ```json  
  brand: {
     type: String,
@@ -52,6 +52,7 @@
   },
   
   ```
+  
   * InvoicePayment  Schema:  storing invoice payment data
   ```json  
 invoice_id: {
@@ -90,6 +91,7 @@ invoice_id: {
    method:POST <br>
    request body: {invoice_id,paid_amount,payment_mode,paymnent_date} <br>
    use: settle partial or full payment of invoice <br>
+    * adde docker file to run on docker container
    
    
    
