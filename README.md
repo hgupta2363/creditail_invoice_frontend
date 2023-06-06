@@ -87,6 +87,11 @@ invoice_id: {
    request body: {invoice_id,paid_amount,payment_mode,paymnent_date} <br>
    use: settle partial or full payment of invoice <br>
    
-         
-  
+   ## How to test
+<img width="521" alt="Screenshot 2023-06-06 at 5 41 14 PM" src="https://github.com/hgupta2363/creditail_invoice_frontend/assets/48471809/101db118-8ff2-45c8-8079-add378978273">
+
+
+* download expo go app
+* scan atteched qr code with expo app
+
   
